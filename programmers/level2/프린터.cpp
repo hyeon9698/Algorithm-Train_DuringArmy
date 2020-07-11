@@ -7,30 +7,26 @@
 using namespace std;
 
 int solution(vector<int> priorities, int location) {
-    deque<int> q;
-    for(int i=0;i<priorities.size();i++){
-        q.push_back(priorities[i]);
-    }
-    int sol = 0;
     int answer = 0;
+    queue<pair<int,int>> que;
+    priority_queue <int> sequence;
     for(int i=0;i<priorities.size();i++){
-        sol = 0;
-        if(sol==0){
-            for(int j=0;j<priorities.size();j++){
-                if(q[0]<q[j]){
-                    sol = 1;
-                }
+        que.push(make_pair(i,priorities[i]));
+        sequence.push(priorities[i]);
+    }
+    while(!que.empty()){
+        int where = que.front().first;
+        int what = que.front().second;
+        que.pop();
+        
+        if(sequence.top()==what){
+            answer++;
+            sequence.pop();
+            if(where==location){
+                return answer;
             }
         }
-        if(sol==0)break;
-        if(sol==1){
-            cout<<q[0]<<'\n';
-            q.push_back(q[0]);
-            q.pop_front();
-            if(location==0) location+=priorities.size()-1;
-            else location--;
-            }
+        else que.push(make_pair(where,what));
     }
-    answer = location;
-    return answer+1;
+    return answer;
 }
