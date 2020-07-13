@@ -19,9 +19,7 @@ int solution(string arrangement) {
             answer += v.back() + 1;
             v.pop_back();
         }
-        else{
-            v.push_back(0);
-        }
+        else v.push_back(0);
     }
     return answer;
 }
