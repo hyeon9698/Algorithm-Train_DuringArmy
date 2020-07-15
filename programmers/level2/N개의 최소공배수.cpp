@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 
+
 using namespace std;
 int gcd(int a, int b){
     while(b!=0){
