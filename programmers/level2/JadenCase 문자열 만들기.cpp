@@ -10,5 +10,6 @@ string solution(string s) {
     for (int i = 1; i < s.size(); i++)
         s[i - 1] == ' ' ? answer += toupper(s[i]) : answer += tolower(s[i]);
     
+    
     return answer;
 }
