@@ -1,0 +1,36 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+string solution(string s) {
+    string answer = "";
+    int a=0;
+    for(int i=0;i<s.size();i++){
+        if(s[i] == ' '){
+            a=0;
+            answer+=s[i];
+            continue;
+        }
+        else{
+            if(a%2==0){
+                if(s[i]>='a'&&s[i]<='z'){answer += s[i] + ('A'-'a');}
+                else{
+                    answer+=s[i];
+                }
+                a++;
+            }
+            else{
+                if(s[i]>='A'&&s[i]<='Z'){
+                    answer += s[i]-('A'-'a');
+                }
+                else{
+                    answer += s[i];
+                }
+                a++;
+                
+            }
+        }
+    }
+    return answer;
+}
