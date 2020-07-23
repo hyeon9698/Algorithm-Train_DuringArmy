@@ -1,22 +1,21 @@
-#include<iostream>
+#include <string>
+#include <vector>
+
 using namespace std;
 
-int collatz(int num)
-{
+int solution(int num) {
     int answer = 0;
-  cout<< num <<"\n";
-  while(answer++ <= 500){
-    num = num%2 ==0 ? num/2 : num*3+1;
-    if(num == 1) break;
-  }
-
-    return answer > 500 ? -1 : answer;
-}
-
-int main()
-{
-    int testCase = 6;
-    int testAnswer = collatz(testCase);
-
-    cout<<testAnswer;
+    while(answer <=500 && num !=1){
+        if(num%2==0){
+            num/=2;
+        }
+        else if(num%2==1){
+            num=num*3+1;
+        }
+        answer++;
+    }
+    if(answer>500){
+        answer = -1;
+    }
+    return answer;
 }
