@@ -22,6 +22,7 @@ vector<int> solution(vector<int> heights) {
             }
         }
         if(count==0)answer.push_back(0);
+
     }
     return answer;
 }
