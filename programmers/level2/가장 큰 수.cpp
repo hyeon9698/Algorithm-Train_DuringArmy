@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 bool compare(string a, string b) {
 	int len;
 	len = a.size() > b.size() ? a.size() : b.size();
