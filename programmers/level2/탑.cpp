@@ -3,7 +3,6 @@
 #include <iostream>
 #include <algorithm>
 
-
 using namespace std;
 
 vector<int> solution(vector<int> heights) {
