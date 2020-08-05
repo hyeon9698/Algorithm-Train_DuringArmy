@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 vector<int> solution(vector<int> heights) {
     vector<int> answer;
     vector<pair<int,int>> v;
