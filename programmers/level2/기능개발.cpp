@@ -6,6 +6,7 @@
 #include <queue>
 #include <deque>
 
+
 using namespace std;
 
 vector<int> solution(vector<int> progresses, vector<int> speeds) {
