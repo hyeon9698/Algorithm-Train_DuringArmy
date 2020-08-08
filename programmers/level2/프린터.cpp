@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <iostream>
 
-
 using namespace std;
 
 int solution(vector<int> priorities, int location) {
