@@ -2,6 +2,7 @@
 #include <algorithm>
 #include<cstdlib>
 
+
 using namespace std;
 
 int solution(int n, int a, int b){
