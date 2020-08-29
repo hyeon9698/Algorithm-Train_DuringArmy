@@ -10,4 +10,5 @@ def solution(A, B):
                 save = j
                 save += 1
                 break
+
     return answer
