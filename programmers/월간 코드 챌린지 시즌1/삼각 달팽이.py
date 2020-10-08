@@ -1,5 +1,4 @@
 from itertools import chain
-
 def solution(n):
     maps = [[0 for _ in range(n)] for _ in range(n)]
     y, x = -1,0
