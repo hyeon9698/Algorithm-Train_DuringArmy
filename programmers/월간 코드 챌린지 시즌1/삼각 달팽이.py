@@ -13,6 +13,5 @@ def solution(n):
                 y-=1; x-=1
             maps[y][x] = number
             number+=1
-    result = [i for i in chain(*maps) if i!= 0]
-    
+    result = [i for i in chain(*maps) if i!= 0]    
     return result
