@@ -13,3 +13,4 @@ for num in nums:
             min = m-total
             answer = total
 print(answer)
+
