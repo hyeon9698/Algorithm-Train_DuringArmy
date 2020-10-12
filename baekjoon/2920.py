@@ -7,3 +7,5 @@ elif data == des:
     print('descending')
 else:
     print('mixed')
+
+    
