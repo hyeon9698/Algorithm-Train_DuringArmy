@@ -12,6 +12,7 @@ string solution(int a, int b) {
     {
         total += day[i];
     }
+    
     total += b - 1;
     answer = stringDay[total % 7];
     return answer;
