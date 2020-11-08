@@ -12,7 +12,7 @@ for _ in range(test_case):
             if queue[0][1] == m:
                 print(count)
                 break
+            else:
+                queue.pop(0)
         else:
-            queue.pop()
-    else:
-        queue.append(queue.pop())
+            queue.append(queue.pop(0))
