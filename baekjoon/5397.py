@@ -43,5 +43,3 @@ for _ in range(test_cases):
             left.append(x)
 
   print("".join(left)+"".join(reversed(right)))
-
-
