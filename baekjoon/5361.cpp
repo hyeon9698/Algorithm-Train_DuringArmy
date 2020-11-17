@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int main() {
-    double a[5] = { 350.34,230.9,190.55,125.3,180.9 }, sum;
+    double a[5], sum;
     int n;
     cin >> n;
     while (n--) {
