@@ -3,7 +3,6 @@ using namespace std;
 int main() {
     double a[5], sum;
     int n;
-    cin >> n;
     while (n--) {
         sum = 0;
         for (int i = 0; i < 5; i++)
