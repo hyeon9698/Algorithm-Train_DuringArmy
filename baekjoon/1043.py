@@ -12,4 +12,3 @@ if K%2:
           cnt[i] += 1
 else:
   for i in range(N):
-    
