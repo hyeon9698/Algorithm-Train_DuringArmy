@@ -1,4 +1,5 @@
-# 바이러스
-with open("test.txt", "r") as f:
-    data = f.read()
-print(data)
+import sys
+sys.stdin = open("input.txt", "r")
+
+x = input()
+print(x)
