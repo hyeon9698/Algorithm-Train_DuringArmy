@@ -1,26 +1,8 @@
-n = int(input())
-n = 1000 - n
+changes = 1000 - int(input())
 count = 0
 
+for i in [500, 100, 50, 10, 5, 1]:
+    count += changes // i
+    changes %= i
 
-def coin(m):
-    global n, count
-    tmp = n // m
-    count += tmp
-    n = n % m
-
-
-while n:
-    if n >= 500:
-        coin(500)
-    elif n >= 100:
-        coin(100)
-    elif n >= 50:
-        coin(50)
-    elif n >= 10:
-        coin(10)
-    elif n >= 5:
-        coin(5)
-    elif n >= 1:
-        coin(1)
 print(count)
