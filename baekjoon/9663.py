@@ -1,3 +1,7 @@
+import sys
+
+# input = sys.stdin.readline
+
 def check(x):
     for i in range(x):
         if row[x] == row[i]:
@@ -15,7 +19,7 @@ def dfs(x):
             if check(x):
                 dfs(x+1)
             
-n = int(input())
+n = int(sys.stdin.readline())
 row = [0] * n
 result = 0
 dfs(0)
