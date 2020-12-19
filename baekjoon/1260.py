@@ -11,8 +11,6 @@ def bfs(v):
             if not visited[next_val]:
                 visited[next_val] = True
                 q.append(next_val)
-
-
 def dfs(v):
     print(v, end=' ')
     visited[v] = True
