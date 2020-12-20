@@ -9,7 +9,7 @@ def bfs(x, y):
             nx = x + dx[i]
             ny = y + dy[i]
             if (0 <= nx < r and 0 <= ny < c and graph[nx][ny] not in step):
-                print(step+graph[nx][ny])
+                # print(step+graph[nx][ny])
                 q.add((nx, ny, step + graph[nx][ny]))
 
 
