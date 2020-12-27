@@ -31,3 +31,4 @@ while len(newnewnewnum) > 2:
 if newnewnewnum[0] == 0:
     newnewnewnum.remove(0)
 print(''.join(map(str, newnewnewnum))+'%')
+
