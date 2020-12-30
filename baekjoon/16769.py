@@ -1,6 +1,5 @@
-import time
 import sys
-sys.stdin = open('input.txt', 'r')
+# sys.stdin = open('input.txt', 'r')
 C, M = [], []
 for i in range(3):
     a, b = map(int, input().split())
