@@ -1,7 +1,7 @@
 import sys
 # sys.stdin = open('input.txt', 'r')
 ML, MR, TL, TR = ('SPR'.index(i) for i in input().split())
-print(ML, MR, TL, TR)
+
 # if ml != mr and tl != tr:
 #     print('?')
 # if ml == mr:
