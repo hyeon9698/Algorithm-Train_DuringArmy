@@ -5,7 +5,7 @@ l, c = map(int, input().split())
 data = list(input().split(' '))
 aeiou = ['a', 'e', 'i', 'o', 'u']
 data.sort()
-data_list = list(combinations(data, 4))
+data_list = list(combinations(data, l))
 aeiou_count = 0
 not_aeiou_count = 0
 for letter in data_list:
