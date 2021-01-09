@@ -14,7 +14,7 @@ for letter in data_list:
             aeiou_count += 1
         else:
             not_aeiou_count += 1
-    if aeiou_count and not_aeiou_count:
+    if aeiou_count and not_aeiou_count > 2:
         print(''.join(letter))
 
 
