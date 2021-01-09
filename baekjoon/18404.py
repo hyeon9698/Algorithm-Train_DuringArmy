@@ -36,7 +36,7 @@ count_data = [[0]*(n+1) for _ in range(n+1)]
 for _ in range(m):
     a, b = map(int, input().split())
     data.append((a, b))
-dfs(x, y)
+bfs(x, y)
 # dfs(x, y)
 for xx, yy in data:
     print(count_data[xx][yy])
