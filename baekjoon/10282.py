@@ -1,6 +1,7 @@
 import heapq
 import sys
 # sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 def dijkstra(start, data, distance):
     heap_data = []
     heapq.heappush(heap_data, (0, start))
@@ -10,7 +11,6 @@ def dijkstra(start, data, distance):
         if distance[now] < dist:
             continue
         for nextt, time in data[now]:
-            # print(f'')
             cost = time + dist
             if cost < distance[nextt]:
                 distance[nextt] = cost
