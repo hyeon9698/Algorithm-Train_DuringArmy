@@ -1,20 +1,20 @@
 from itertools import combinations
 import sys
-# sys.stdin = open('input.txt', 'r')
+sys.stdin = open('input.txt', 'r')
 l, c = map(int, input().split())
 data = list(input().split(' '))
 aeiou = ['a', 'e', 'i', 'o', 'u']
 data.sort()
 data_list = list(combinations(data, l))
-aeiou_count = 0
-not_aeiou_count = 0
 for letter in data_list:
+    aeiou_count = 0
+    not_aeiou_count = 0
     for i in letter:
         if i in aeiou:
             aeiou_count += 1
         else:
             not_aeiou_count += 1
-    if aeiou_count and not_aeiou_count > 2:
+    if aeiou_count and not_aeiou_count >= 2:
         print(''.join(letter))
 
 
