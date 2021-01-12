@@ -1,6 +1,6 @@
 import sys
 # sys.stdin = open('input.txt', 'r')
-# dp 식 A[i][j] = max(A[i-1][j-1], A[i-1][j])
+# dp 식 dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + data[i][j]
 n = int(input())
 dp = [[0]*(n+1) for _ in range(n+1)]
 data = []
@@ -11,6 +11,6 @@ for i in range(n):
     data.append(arr)
 for i in range(n):
     for j in range(n):
-        dp[i][j] = max(dp[i-1][j-1] + data[i][j], dp[i-1][j] + data[i][j])
+        dp[i][j] = max(dp[i-1][j-1], dp[i-1][j]) + data[i][j]
 
 print(max(max(dp)))
