@@ -1,5 +1,5 @@
 import sys
-# sys.stdin = open('input.txt', 'r')
+sys.stdin = open('input.txt', 'r')
 
 def check(x, y, lst):
     flag = False
