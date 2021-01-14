@@ -16,8 +16,6 @@ for i in range(1, n+1):
         if data[i][j]:
             check(i, j, data)
 maxx = 0
-# for i in data:
-#     print(i)
 for i in data:
     maxx = max(maxx, max(i))
 print(maxx*maxx)
