@@ -19,7 +19,7 @@ def move(state):
     tmp[7] = state[5] + state[6]
     for i in range(8):
         tmp[i] %= 1000000007
-        return tmp
+    return tmp
 
 for i in range(int(input())):
     DP = move(DP)
