@@ -3,11 +3,9 @@ import sys
 N = int(input())
 data = list(map(int, input().split()))
 first_index = 0
-last_index = len(data)-1
-most_number = 1000000000
-while True:
-    if first_index > last_index:
-        break
+last_index = N-1
+most_number = 2000000000
+while first_index < last_index:
     number = data[first_index] + data[last_index]
     # if number == 0:
     #     print(data[first_index], data[last_index])
@@ -18,6 +16,10 @@ while True:
         L = last_index
         # print("abs문에 들어왔습니다 ",F, L)
         most_number = number
+    if number == 0:
+        F = first_index
+        L = last_index
+        break
     if number > 0:
         last_index -= 1
     elif number < 0:
