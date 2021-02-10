@@ -1,5 +1,8 @@
 import sys
 sys.stdin = open('input.txt', 'r')
+def print_data():
+    for i in data:
+        print(i)
 def candidate_list(i, j):
     cand = []
     for num in range(1, 10):
@@ -27,19 +30,15 @@ def candidate_list(i, j):
     return cand
         
 data = [list(map(int, input())) for _ in range(9)]
-def fuction():
-    for i in range(9):
-        for j in range(9):
-            if data[i][j] != 0:
-                continue
-            if not candidate_list(i, j):
-                data[i][j] = 0
-                return
-            print(candidate_list(i, j))
-            for num in candidate_list(i, j):
-                data[i][j] = num
-                fuction()
+def backtracking(k):
+    global state
+    if k == len(zero_position):
+        for e in data:
+            print(''.join(list(map(str, e))))
+        state = True
+    else:
+        for num in candidate_list()
+    
             
-fuction()
 for i in data:
     print(i)
