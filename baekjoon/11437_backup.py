@@ -1,5 +1,5 @@
 # https://www.youtube.com/watch?v=O895NbxirM8
-# 다시해보기
+# 영상 보면서 다시해보기
 import sys
 sys.setrecursionlimit(int(1e5))
 sys.stdin = open('input.txt', 'r')
@@ -14,6 +14,11 @@ def dfs(x, depth):
         parent[y][0] = x
         dfs(y, depth + 1)
 def lca(a, b):
+    if d[a] > d[b]:
+        a, b = b, a
+    for i in range(LOG-1, -1, -1):
+        if d[b] - d[a] >= (1 << i):
+            b = parent[b][i]
     while d[a] != d[b]:
         if d[a] > d[b]:
             a = parent[a]
