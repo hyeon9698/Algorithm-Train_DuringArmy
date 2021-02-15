@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 def bfs(start):
     q = deque([(start, 1)])
     check[start] = True
