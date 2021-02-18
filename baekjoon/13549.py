@@ -1,5 +1,4 @@
 from collections import deque
-from heapq import *
 import sys
 sys.stdin = open('input.txt', 'r')
 def bfs(n, k):
@@ -16,16 +15,6 @@ def bfs(n, k):
                 else:
                     count_list[nxt] = count_list[now] + 1
                     q.append(nxt)
-# def dijkstra(start, end):
-#     q = [(start, 0)]
-#     heapify(q)
-#     while q:
-#         now, cnt = heappop(q)
-#         if now == end:
-#             print('finished')
-#             return
-#         for nxt in (now*2, now+1, now-1):
-            
 n, k = map(int, input().split())
 count_list = [0]*(1000000)
 print(bfs(n, k))
