@@ -1,21 +1,31 @@
 from collections import deque
+from heapq import *
 import sys
 sys.stdin = open('input.txt', 'r')
 def bfs(n, k):
-    q = deque([(n, 0)])
+    q = deque([n])
     while q:
-        now, cnt = q.popleft()
+        now = q.popleft()
         if now == k:
-            return cnt
-        for nxt in (now*2, now+1, now-1):
-            if 0 <= nxt <= 100000:
-                if not visited[nxt]:
-                    visited[nxt] = True
-                    # print(nxt, cnt+1)
-                    if nxt == now*2:
-                        q.append((nxt, cnt))
-                    else:
-                        q.append((nxt, cnt+1))
+            return count_list[now]
+        for nxt in (now-1, now+1, now*2):
+            if 0 <= nxt <= 100000 and not count_list[nxt]:
+                if nxt == now*2 and now != 0:
+                    count_list[nxt] = count_list[now]
+                    q.appendleft(nxt)
+                else:
+                    count_list[nxt] = count_list[now] + 1
+                    q.append(nxt)
+# def dijkstra(start, end):
+#     q = [(start, 0)]
+#     heapify(q)
+#     while q:
+#         now, cnt = heappop(q)
+#         if now == end:
+#             print('finished')
+#             return
+#         for nxt in (now*2, now+1, now-1):
+            
 n, k = map(int, input().split())
-visited = [False]*(1000000)
+count_list = [0]*(1000000)
 print(bfs(n, k))
