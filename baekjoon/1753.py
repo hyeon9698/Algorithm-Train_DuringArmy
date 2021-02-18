@@ -1,6 +1,7 @@
 import sys
 from heapq import *
 sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 def dijkstra(start):
     distance[start] = 0
     q = [(0, start)]
