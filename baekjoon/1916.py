@@ -2,7 +2,7 @@ import sys
 from collections import deque
 from heapq import *
 sys.stdin = open('input.txt', 'r')
-def dijkstra(start, end):
+def dijkstra(start):
     visited[start] = 0
     q = [(start, 0)]
     heapify(q)
@@ -21,5 +21,5 @@ for _ in range(m):
     a, b, c = map(int, input().split())
     data[a].append((b, c))
 start, end = map(int, input().split())
-dijkstra(start, end)
+dijkstra(start)
 print(visited[end])
