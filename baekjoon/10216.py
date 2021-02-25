@@ -1,5 +1,6 @@
 import sys
 sys.stdin = open('input.txt', 'r')
+input = sys.stdin.readline
 def find(node):
     if parent[node] != node:
         find(parent[node])
@@ -7,10 +8,16 @@ def find(node):
 def union_byrank(a, b):
     root_a = find(a)
     root_b = find(b)
-    if rank[root_a] > rank[root_b]:
-        parent[root_b] = root_a
+    if rank[root_a] < rank[root_b]:
+        tmp = parent[root_a]
+        for i, num in enumerate(parent):
+            if num == tmp:
+                parent[i] = root_b
     else:
-        parent[root_a] = root_b
+        tmp = parent[root_b]
+        for i, num in enumerate(parent):
+            if num == tmp:
+                parent[i] = root_a
         if rank[root_a] == rank[root_b]:
             rank[root_a] += 1
 def connected(data_i, data_j):
@@ -29,13 +36,12 @@ for _ in range(int(input())):
     parent = [i for i in range(n)]
     rank = [0 for _ in range(n)]
     for i in range(n):
-        for j in range(n):
-            if i != j and connected(data[i], data[j]):
-                print(f'union => {i}, {j}')
+        for j in range(1, n):
+            if connected(data[i], data[j]):
+                # print(f'union => {i}, {j}')
                 union_byrank(i, j)
-            else:
-                print("NOOOOOOOOO", i, j)
-    print(parent)
+                # print(f'parent-> {parent}')
+                # print(f'rank-> {rank}')
     print(len(set(parent)))
 """
 1
