@@ -1,24 +1,25 @@
 from itertools import combinations
 import sys
-# sys.stdin = open('input.txt','r')
+from copy import deepcopy
+sys.stdin = open('input.txt','r')
 def dfs():
     if len(stack) == m:
-        ans.append(stack)
+        if stack not in ans:
+            _list = deepcopy(stack)
+            ans.append(_list)
         return
     for num in data:
-        if not stack:
-            stack.append(num)
-            print('h')
-        elif num < stack[-1]:
-            print('h')
-            continue
+        if stack:
+            if stack[-1] > num:
+                continue
         stack.append(num)
         dfs()
         stack.pop()
-# n, m = map(int, input().split())
-n,m = 4, 2
+n, m = map(int, input().split())
 stack = []
 ans = []
-data = [9,7,9,1]#list(map(int, input().split()))
+data = list(map(int, input().split()))
 data.sort()
 dfs()
+for i in ans:
+    print(' '.join(str(k) for k in i))
